@@ -1,0 +1,88 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://gist.githubusercontent.com/niyue/664da0717e379fca3c9167b4b258578c/raw/1347095893f6e59a438b66c40cfe7ac2bbe90b78/piemaker.schema.json",
+  "title": "Piemaker JSON schema",
+  "description": "piemaker project descriptor",
+  "type": "object",
+  "properties": {
+    "namespace": {
+      "description": "The namespace for the project",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name for the project",
+      "type": "string"
+    },
+    "version": {
+      "description": "The version for the project",
+      "type": "string"
+    },
+    "portVersion": {
+      "description": "The vcpkg port version for the project if this project is a vcpkg port",
+      "type": "integer"
+    },
+    "rust": {
+      "description": "Indicate if this is rust integration project"
+      "type": "boolean"
+    },
+    "dependencies": {
+      "description": "Dependencies for the project",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "package": {
+            "type": "string",
+            "description": "dependency name used for find_package"
+          },
+          "library": {
+            "type": "string",
+            "description": "dependency name used for find_library"
+          },
+          "header": {
+            "type": "string",
+            "description": "a header file used for find_path"
+          },
+          "link": {
+            "type": "string",
+            "description": "dependency name used for target_link_dependencies"
+          },
+          "vcpkg": {
+            "type": ["object", "string"],
+            "description": "name of the vcpkg this dependency corresponds to"
+          },
+          "scope": {
+            "type": "string",
+            "enum": ["PUBLIC", "INTERFACE", "PRIVATE"],
+            "description": "dependency scope"
+          }
+        }
+      },
+      "minItems": 0
+    },
+    "properties": {
+      "type": "object",
+      "description": "specify a cmake target's properties"
+    },
+    "modules": {
+      "type": "array",
+      "description": "other piemaker projects this project depends on",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "the name of the piemaker project"
+          },
+          "directory": {
+            "type": "string",
+            "description": "an absolute or relative path to the directory of the piemaker project"
+          }
+        },
+        "required": ["name", "directory"]
+      },
+      "minItems": 0
+    }
+  },
+  "required": ["namespace", "name"]
+}
