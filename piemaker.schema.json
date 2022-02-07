@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://gist.githubusercontent.com/niyue/664da0717e379fca3c9167b4b258578c/raw/1347095893f6e59a438b66c40cfe7ac2bbe90b78/piemaker.schema.json",
+  "$id": "https://raw.githubusercontent.com/yanhuangdata/piemaker-schema-json/main/piemaker.schema.json",
   "title": "Piemaker JSON schema",
   "description": "piemaker project descriptor",
   "type": "object",
