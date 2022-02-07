@@ -25,6 +25,10 @@
       "description": "Indicate if this is rust integration project",
       "type": "boolean"
     },
+    "customTarget": {
+      "description": "Indicate if this project has a custom target so that default target won't be generated automatically",
+      "type": "boolean"
+    },
     "dependencies": {
       "description": "Dependencies for the project",
       "type": "array",
