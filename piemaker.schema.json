@@ -29,6 +29,20 @@
       "description": "Indicate if this project has a custom target so that default target won't be generated automatically",
       "type": "boolean"
     },
+    "execTarget": {
+      "description": "This project target is an executable",
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "name of the executable target",
+          "type": "string"
+        }, 
+        "main": {
+          "description": "main file of the executable",
+          "type": "string"
+        }
+      }
+    },
     "dependencies": {
       "description": "Dependencies for the project",
       "type": "array",
