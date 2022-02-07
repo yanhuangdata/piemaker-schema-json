@@ -22,7 +22,7 @@
       "type": "integer"
     },
     "rust": {
-      "description": "Indicate if this is rust integration project"
+      "description": "Indicate if this is rust integration project",
       "type": "boolean"
     },
     "dependencies": {
